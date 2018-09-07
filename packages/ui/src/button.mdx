@@ -1,0 +1,94 @@
+---
+name: Button
+route: /button
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz'
+import Button from './button'
+import FeatherIcon from 'feather-icons-react'
+import { Row } from './_layout'
+
+# Button
+A button triggers an operation when clicked.
+
+## Examples
+
+<Row>
+    <h3>Default</h3>
+    <h3>Primary</h3>
+    <h3>Secondary</h3>
+    <h3>Danger</h3>
+</Row>
+<Row>
+  <Button>Button</Button>
+  <Button variant="primary">Button</Button>
+  <Button variant="secondary">Button</Button>
+  <Button variant="danger">Button</Button>
+</Row>
+<Row>
+  <Button disabled>Button</Button>
+  <Button disabled variant="primary">Button</Button>
+  <Button disabled variant="secondary">Button</Button>
+  <Button disabled variant="danger">Button</Button>
+</Row>
+<Row>
+  <Button busy>Button</Button>
+  <Button variant="primary" busy>Button</Button>
+  <Button variant="secondary" busy>Button</Button>
+  <Button variant="danger" busy>Button</Button>
+</Row>
+<Row>
+  <Button><FeatherIcon icon="edit" size={12}/> Button</Button>
+  <Button variant="primary"><FeatherIcon icon="save" size={12}/> Button</Button>
+  <Button variant="secondary"><FeatherIcon icon="check" size={12}/> Button</Button>
+  <Button variant="danger"><FeatherIcon icon="trash" size={12}/> Button</Button>
+</Row>
+<Row>
+  <Button ghost>Ghost Button</Button>
+  <Button variant="primary" ghost>Ghost Button</Button>
+  <Button variant="secondary" ghost>Ghost Button</Button>
+  <Button variant="danger" ghost>Ghost Button</Button>
+</Row>
+<Row>
+  <Button disabled ghost>Ghost Button</Button>
+  <Button disabled variant="primary" ghost>Ghost Button</Button>
+  <Button disabled variant="secondary" ghost>Ghost Button</Button>
+  <Button disabled variant="danger" ghost>Ghost Button</Button>
+</Row>
+<Row>
+  <Button busy ghost>Ghost Button</Button>
+  <Button busy variant="primary" ghost>Ghost Button</Button>
+  <Button busy variant="secondary" ghost>Ghost Button</Button>
+  <Button busy variant="danger" ghost>Ghost Button</Button>
+</Row>
+<Row>
+  <Button ghost><FeatherIcon icon="edit" size={12}/> Button</Button>
+  <Button ghost variant="primary"><FeatherIcon icon="save" size={12}/> Button</Button>
+  <Button ghost variant="secondary"><FeatherIcon icon="check" size={12}/> Button</Button>
+  <Button ghost variant="danger"><FeatherIcon icon="trash" size={12}/> Button</Button>
+</Row>
+
+## Props
+
+<PropsTable of={Button} />
+
+## Playground
+
+import Component from '@reach/component-component'
+
+<Playground>
+  <Component initialState={{submitting: false}}>
+    {({state, setState}) => 
+      <Button 
+        variant="primary"
+        busy={state.submitting}
+        onClick={() => 
+            setState(({submitting}) => ({submitting: !submitting}))
+        }
+      >
+        Submit
+      </Button>
+    }
+  </Component>
+</Playground>

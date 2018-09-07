@@ -1,0 +1,14 @@
+{
+  "type": "static",
+  "name": "next-composer-ui",
+  "alias": "next-composer-ui",
+  "static": {
+    "public": ".docz/dist",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
