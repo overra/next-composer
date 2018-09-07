@@ -5,12 +5,16 @@
   "license": "MIT",
   "scripts": {
     "dev": "node server.js",
+    "compose": "cross-env NODE_ENV=compose node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
     "next": "^6.1.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
   }
 }
